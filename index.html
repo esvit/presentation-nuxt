@@ -230,6 +230,39 @@
 	</section>
 
 	<section class="slide">
+		<h2>Supercharged компоненти</h2>
+		<img class="cover" src="pictures/image14.png" />
+	</section>
+
+	<section class="slide">
+		<h2>AsyncData</h2>
+		<pre>
+			<code>export default {</code>
+			<code>   data () {</code>
+			<code>      return { project: 'default' }</code>
+			<code>   }</code>
+			<code>   <mark>asyncData</mark> (context) {</code>
+			<code>      return { project: 'nuxt' }</code>
+			<code>   }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Fetch</h2>
+		<pre>
+			<code>export default {</code>
+			<code>   <mark>fetch</mark> ({ store, params }) {</code>
+			<code>      return axios.get('https://.../stars')</code>
+			<code>      	.then((res) => {</code>
+			<code>      		store.commit('setStars', res.data)</code>
+			<code>      	})</code>
+			<code>   }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<h2>Modules</h2>
 		<pre>
 			<code>module.exports = function (moduleOptions) {</code>
