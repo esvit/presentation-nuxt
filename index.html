@@ -31,6 +31,16 @@
 		.slide::after {
 			background-image: url(ribbon.svg);
 		}
+		.slide.with-logo::before {
+			position: absolute;
+			bottom: 15px;
+			right: 20px;
+			width: 128px;
+			height: 41px;
+			content: ' ';
+			background-size: 128px 41px;
+			background-image: url(./pictures/logo.png);
+		}
 		.shower.list .slide.active {
 			box-shadow: 0 0 0 1px #0b314f, 0 0 0 20px #13a6e1, 0 20px 50px rgba(0, 0, 0, 0.3);
 		}
@@ -90,7 +100,7 @@
 		</style>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Коротко</h2>
 
 		<div class="columns two">
@@ -103,11 +113,11 @@
 		</div>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<img style="max-width: 100%" class="cover" src="pictures/image3.png" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>CSR</h2>
 		<img class="cover" src="pictures/image4.png" />
 	</section>
@@ -117,17 +127,17 @@
 		<img style="min-height: 100%; max-width: none" class="cover" src="pictures/image5.jpeg" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>SSR</h2>
 		<img class="cover" src="pictures/image6.png" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>SSR</h2>
 		<img style="max-height: 80%" class="cover" src="pictures/image7.jpg" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Плюси SSR</h2>
 
 		<ol style="font-size: 42px">
@@ -137,7 +147,7 @@
 		</ol>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Мінуси SSR</h2>
 
 		<ol style="font-size: 42px">
@@ -147,7 +157,7 @@
 		</ol>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2 class="shout">Pre-rendering</h2>
 	</section>
 
@@ -155,16 +165,16 @@
 		<img class="cover" src="pictures/image8.png" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<img class="cover" src="pictures/image2.png" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<img class="cover" src="pictures/image11.png" />
 	</section>
 
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Як почати?</h2>
 		<p>Встановлюємо vue-cli глобально</p>
 		<pre>
@@ -176,15 +186,15 @@
 		</pre>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<img class="cover" src="pictures/image9.png" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<img class="cover" src="pictures/image10.png" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Вкладені маршрути</h2>
 		<pre>
 			<code>&lt;template&gt;</code>
@@ -195,7 +205,7 @@
 		</pre>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Параметри в URL</h2>
 		<pre><code>/products/<mark class="important">_</mark>product_id.vue</code></pre>
 		<pre>
@@ -207,11 +217,11 @@
 		</pre>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<img class="cover" src="pictures/image12.png" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Layouts</h2>
 		<pre>
 			<code>&lt;template&gt;</code>
@@ -225,16 +235,16 @@
 		</pre>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<img class="cover" src="pictures/image13.png" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Supercharged компоненти</h2>
 		<img class="cover" src="pictures/image14.png" />
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>AsyncData</h2>
 		<pre>
 			<code>export default {</code>
@@ -248,7 +258,7 @@
 		</pre>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Fetch</h2>
 		<pre>
 			<code>export default {</code>
@@ -262,7 +272,7 @@
 		</pre>
 	</section>
 
-	<section class="slide">
+	<section class="slide with-logo">
 		<h2>Modules</h2>
 		<pre>
 			<code>module.exports = function (moduleOptions) {</code>
