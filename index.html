@@ -4,11 +4,9 @@
 	<title>Real server-side rendering with Vue</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:400,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/styles.css">
 	<style>
         .shower {
-			font: 25px/2 'Roboto', sans-serif;
             --slide-ratio: calc(16 / 9);
 			--color-grey: #f0f0f0;
 			--color-blue: #13a6e1;
@@ -16,12 +14,6 @@
 
 			color: #fff;
         }
-		h1, h2, h3, h4, h5, h6 {
-			font-family: 'Roboto', sans-serif;
-		}
-		.slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6 {
-			font-family: 'Roboto', sans-serif;
-		}
 		.caption h1, .caption p {
 			text-shadow: none;
 		}
@@ -30,6 +22,12 @@
 		}
 		.slide::after {
 			background-image: url(ribbon.svg);
+		}
+		.slide.with-bender {
+			background-image: url(./pictures/bender.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center right;
 		}
 		.slide.with-logo::before {
 			position: absolute;
@@ -175,19 +173,59 @@
 
 
 	<section class="slide with-logo">
+		<h2>Вміє</h2>
+
+		<ol style="font-size: 42px">
+			<li class="next">гаряча заміна</li>
+			<li class="next">SASS, LESS, Stylus, ...</li>
+			<li class="next">мініфікація JS & CSS</li>
+			<li class="next">сервер статики</li>
+		</ol>
+	</section>
+
+
+	<section class="slide with-logo">
+		<h2>Розмір min+gzip</h2>
+		<h2 class="shout">57Кб</h2>
+	</section>
+
+	<section class="slide with-logo">
 		<h2>Як почати?</h2>
+		<div class="next">
 		<p>Встановлюємо vue-cli глобально</p>
 		<pre>
 			<code>npm install -g vue-cli</code>
 		</pre>
+		</div>
+		<div class="next">
 		<p>Створюємо новий проект зі шаблону</p>
 		<pre>
 			<code>vue init <mark>nuxt-community/starter-template</mark> &lt;project-name&gt;</code>
 		</pre>
+		</div>
 	</section>
 
 	<section class="slide with-logo">
 		<img class="cover" src="pictures/image9.png" />
+	</section>
+
+
+	<section class="slide with-logo">
+		<img class="cover" src="pictures/image12.png" />
+	</section>
+
+	<section class="slide with-logo">
+		<h2>Layouts</h2>
+		<pre>
+			<code>&lt;template&gt;</code>
+			<code>   &lt;h1&gt;Admin Page&lt;/h1&gt;</code>
+			<code>&lt;/template&gt;</code>
+			<code>&lt;script&gt;</code>
+			<code>export default {</code>
+			<code>   <mark>layout:</mark> 'admin-layout'</code>
+			<code>};</code>
+			<code>&lt;/script&gt;</code>
+		</pre>
 	</section>
 
 	<section class="slide with-logo">
@@ -214,24 +252,6 @@
 			<code>export default {</code>
 			<code>	  validate ({ params }) {</code>
 			<code>	     return return /^\d+$/.test(params.<mark>product_id</mark>);</code>
-		</pre>
-	</section>
-
-	<section class="slide with-logo">
-		<img class="cover" src="pictures/image12.png" />
-	</section>
-
-	<section class="slide with-logo">
-		<h2>Layouts</h2>
-		<pre>
-			<code>&lt;template&gt;</code>
-			<code>   &lt;h1&gt;Admin Page&lt;/h1&gt;</code>
-			<code>&lt;/template&gt;</code>
-			<code>&lt;script&gt;</code>
-			<code>export default {</code>
-			<code>   <mark>layout:</mark> 'admin-layout'</code>
-			<code>};</code>
-			<code>&lt;/script&gt;</code>
 		</pre>
 	</section>
 
@@ -273,6 +293,60 @@
 	</section>
 
 	<section class="slide with-logo">
+		<img class="cover" src="pictures/image15.png" />
+	</section>
+
+	<section class="slide with-logo">
+		<h2>nuxt-link</h2>
+		<div class="next">
+		<pre>
+			<code>&lt;a href="/about"&gt;Про нас&lt;/a&gt; <span class="comment next">&lt;!-- Перевантажить сторінку --&gt;</span></code>
+		</pre>
+		</div>
+		<div class="next">
+		<pre>
+			<code>&lt;nuxt-link to="/about"&gt;Про нас&lt;/nuxt-link&gt; <span class="comment">&lt;!-- чікі-пікі --&gt;</span></code>
+		</pre>
+		</div>
+	</section>
+
+	<section class="slide with-logo">
+		<img class="cover" src="pictures/image16.png" />
+	</section>
+
+	<section class="slide with-logo">
+		<h2>Plugins</h2>
+		<pre>
+			<code class="comment">// nuxt.config.js</code>
+			<code>module.exports = {</code>
+			<code>   plugins: [</code>
+			<code>      { src: '~/plugins/vue-notifications', <mark>ssr: false</mark> }</code>
+			<code>   ]</code>
+			<code>};</code>
+		</pre>
+	</section>
+
+	<section class="slide with-logo">
+		<h2>Plugins</h2>
+		<pre>
+			<code class="comment">// plugins/vue-notifications.js</code>
+			<code>import Vue from 'vue';</code>
+			<code>import VueNotifications from 'vue-notifications';</code>
+			<code>&nbsp;</code>
+			<code>Vue.use(VueNotifications);</code>
+		</pre>
+		<img class="next notification" src="pictures/notification.png" />
+		<style>
+			img.notification {
+				position: absolute;
+				bottom: 20px;
+				right: 15px;
+				width: 336px;
+			}
+		</style>
+	</section>
+
+	<section class="slide with-logo with-bender">
 		<h2>Modules</h2>
 		<pre>
 			<code>module.exports = function (moduleOptions) {</code>
@@ -287,6 +361,34 @@
 		</pre>
 	</section>
 
+	<section class="slide with-logo">
+		<h2>Deploy</h2>
+		<pre>
+			<code>npm run build</code>
+			<code>npm start</code>
+		</pre>
+	</section>
+
+	<section class="slide with-logo">
+		<h2>Deploy (Pre Rendered)</h2>
+		<pre>
+			<code>npm run generate</code>
+		</pre>
+	</section>
+
+	<section class="slide with-logo">
+		<h2>Deploy (SPA)</h2>
+		<pre>
+			<code class="comment">// nuxt.config.js</code>
+			<code>module.exports = {</code>
+			<code>   mode: 'spa'</code>
+			<code>};</code>
+		</pre>
+		<pre>
+			<code>npm run build</code>
+		</pre>
+	</section>
+
 	<section class="slide">
 		<img class="cover" src="pictures/final.png" />
 	</section>
@@ -294,7 +396,5 @@
 	<div class="progress"></div>
 
 	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
-
 </body>
 </html>
